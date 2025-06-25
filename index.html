@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Brinker Kundenformular</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/png" href="favicon.png" />
+</head>
+<body>
+  <div id="login-container">
+    <h2>Login</h2>
+    <input type="text" id="username" placeholder="Nachname" />
+    <input type="password" id="password" placeholder="Passwort" />
+    <button onclick="login()">Einloggen</button>
+    <p id="login-error" style="color:red"></p>
+  </div>
+
+  <div id="form-container" style="display:none">
+    <h2>Kundenbearbeitung</h2>
+    <label for="customer-select">Kunde:</label>
+    <select id="customer-select">
+      <option selected disabled>-- bitte wählen --</option>
+    </select>
+
+    <label>Aktuelle Preisliste:</label>
+    <input type="text" id="preisliste-aktuell" disabled />
+
+    <label for="preisliste-neu">Neue Preisliste:</label>
+    <select id="preisliste-neu">
+      <option selected disabled>-- bitte wählen --</option>
+    </select>
+
+    <label>Top 5 Artikel (nach Absatz):</label>
+    <div id="top-article-container"></div>
+
+    <label>Verkaufschancen:</label>
+    <div id="verkaufschance-container"></div>
+
+    <label>Kommentar:</label>
+    <textarea id="kommentar"></textarea>
+
+    <div id="preisvergleich"></div>
+
+    <button onclick="saveDraft()">Zwischenspeichern</button>
+    <button onclick="submitForm()">Abschicken</button>
+    <button onclick="nextCustomer()">Weiterer Kunde</button>
+    <button onclick="removeCustomer()">Kunde entfernen</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
